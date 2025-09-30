@@ -14,8 +14,8 @@ COPY . .
 
 # Define variáveis de ambiente para o build
 # Defina as variáveis diretamente aqui ou pode passar essas variáveis no `docker-compose.yml` ou no Render.com.
-ENV VITE_URL_AGENT_API=https://macabeu-backend.onrender.com/
-ENV VITE_MODE=production
+#ENV VITE_URL_AGENT_API=https://macabeu-backend.onrender.com/
+#ENV VITE_MODE=production
 
 # Roda o build com as variáveis definidas
 RUN npm run build
