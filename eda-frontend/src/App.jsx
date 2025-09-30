@@ -9,7 +9,8 @@ export default function App() {
   const [response, setResponse] = useState('');
   const [history, setHistory] = useState([]);
   const [chartData, setChartData] = useState(null);
-
+  const API_URL = import.meta.env.VITE_URL_AGENT_API;
+  
   // Upload CSV
   const handleUpload = async () => {
     if (!file) return;
