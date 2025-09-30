@@ -25,12 +25,20 @@ api_key = os.getenv('GROQ_API_KEY')
 
 agent = CSVAnalysisAgent(key=api_key)
 
+api_front_url = os.getenv('API_FRONT_URL')
+origins = [
+    api_front_url,
+    f'{api_front_url}:8080',
+    f'{api_front_url}:5173',
+    f'{api_front_url}:3000'
+]
+
 app = FastAPI(title="CSV Analysis Agent API")
 
 # Configuração CORS para permitir requests do React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="*",  # porta do React
+    allow_origins=origins,  # porta do React
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
