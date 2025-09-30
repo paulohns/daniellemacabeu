@@ -16,9 +16,12 @@ class CSVAnalysisAgent:
             api_key=key,
             base_url="https://api.groq.com"
         )
+        self.memory = ConversationBufferMemory(
+            memory_key="chat_history", 
+            return_messages=False
+        )
 
     def carregar_arquivo(self, file_path: str):
-        import pandas as pd
         try:
             self.df = pd.read_csv(file_path)
             self.current_file = file_path
