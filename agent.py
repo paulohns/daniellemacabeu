@@ -2,6 +2,7 @@ import pandas as pd
 from langchain_openai import ChatOpenAI
 from langchain_groq.chat_models import ChatGroq
 from langchain_experimental.agents import create_pandas_dataframe_agent
+from langchain.memory import ConversationBufferMemory
 
 class CSVAnalysisAgent:
     def __init__(self, key: str):
